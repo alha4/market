@@ -1,6 +1,4 @@
 <?
-spl_autoload_extensions('.php');
-
 spl_autoload_register(function($className) {
 
     $className = ltrim($className, '\\');
@@ -50,8 +48,8 @@ spl_autoload_register(function($classname) use ($preparedMap) {
         require($MODULE_PATH);
 
         CModule::IncludeModule($preparedMap[$classname]);
-       
-       CModule::RequireAutoloadClass($classname);
+        // изменили код
+        //CModule::RequireAutoloadClass($classname);
     }
 });
 ?>
