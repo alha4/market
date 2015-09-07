@@ -42,13 +42,9 @@ spl_autoload_register(function($classname) use ($preparedMap) {
         $MODULE_PATH.= '/'.$preparedMap[$classname].'.php';
 
         require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
-  
-        // ... и подключаем этот модуль
-  
-        require($MODULE_PATH);
 
         CModule::IncludeModule($preparedMap[$classname]);
-        // изменили код
+        // изменили код 2
         //CModule::RequireAutoloadClass($classname);
     }
 });
